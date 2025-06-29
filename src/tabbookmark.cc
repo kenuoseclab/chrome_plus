@@ -361,11 +361,6 @@ int HandleTranslateKey(WPARAM wParam) {
     return 0;
   }
 
-  auto hwnd = GetFocus();
-  if (GetChromeWidgetWin(hwnd) == nullptr) {
-    return 0;
-  }
-
   ExecuteCommand(IDC_SHOW_TRANSLATE);
   keybd_event(VK_RIGHT, 0, 0, 0);
   keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, 0);
